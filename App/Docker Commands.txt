@@ -1,0 +1,19 @@
+# USER APPLICATION
+
+# To build the image compatable for arm64 architecture and push to docker registry
+
+docker buildx build --platform linux/amd64,linux/arm64 -t vishalkurane/taj-user-auth:latest . --push
+docker buildx build --platform linux/amd64,linux/arm64 -t vishalkurane/taj-user-create-account:latest . --push
+docker buildx build --platform linux/amd64,linux/arm64 -t vishalkurane/taj-user-home:latest . --push
+docker buildx build --platform linux/amd64,linux/arm64 -t vishalkurane/taj-user-menu:latest . --push
+docker buildx build --platform linux/amd64,linux/arm64 -t vishalkurane/taj-user-reservation:latest . --push
+
+# ADMIN APPLICATION
+
+# To build the image compatable for arm64 architecture and push to docker registry
+
+docker buildx build --platform linux/amd64,linux/arm64 -t vishalkurane/taj-admin-auth:latest . --push
+docker buildx build --platform linux/amd64,linux/arm64 -t vishalkurane/taj-admin-home:latest . --push
+docker buildx build --platform linux/amd64,linux/arm64 -t vishalkurane/taj-admin-menu:latest . --push
+docker buildx build --platform linux/amd64,linux/arm64 -t vishalkurane/taj-admin-reservation:latest . --push
+

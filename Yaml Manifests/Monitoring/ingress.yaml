@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: taj-monitoring-ingress
+  namespace: monitoring
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx-monitoring
+  rules:
+  - http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: monitoring-grafana
+              port:
+                number: 9090
+        - path: /grafana
+          pathType: Prefix
+          backend:
+            service:
+              name: prometheus-operated
+              port:
+                number: 80
+        - path: /alertmanager
+          pathType: Prefix
+          backend:
+            service:
+              name: alertmanager-operated
+              port:
+                number: 9093

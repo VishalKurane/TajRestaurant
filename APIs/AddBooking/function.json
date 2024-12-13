@@ -1,0 +1,11 @@
+{
+  "bindings": [
+    {
+      "name": "msg",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "ReservationQueueName",
+      "connection": "ServiceBusConnectionString"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+# Create Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: taj-user-app
+
+---
+# Deploynent - User Authentication
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taj-user-auth
+  namespace: taj-user-app
+  labels:
+    app: taj-user-auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taj-user-auth
+  template:
+    metadata:
+      labels:
+        app: taj-user-auth
+    spec:
+      containers:
+      - name: taj-user-auth
+        image: vishalkurane/taj-user-auth:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        envFrom:
+          - configMapRef:
+              name: taj-configmap
+
+---
+# Service - User Authentication
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: taj-user-auth-service
+  namespace: taj-user-app
+spec:
+  selector:
+    app: taj-user-auth
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+# Deploynent - User Create Account
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taj-user-create-account
+  namespace: taj-user-app
+  labels:
+    app: taj-user-create-account
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taj-user-create-account
+  template:
+    metadata:
+      labels:
+        app: taj-user-create-account
+    spec:
+      containers:
+      - name: taj-user-create-account
+        image: vishalkurane/taj-user-create-account:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        envFrom:
+          - configMapRef:
+              name: taj-configmap
+
+---
+# Service - User Create Account
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: taj-user-create-account-service
+  namespace: taj-user-app
+spec:
+  selector:
+    app: taj-user-create-account
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+# Deploynent - Home Authentication
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taj-user-home
+  namespace: taj-user-app
+  labels:
+    app: taj-user-home
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taj-user-home
+  template:
+    metadata:
+      labels:
+        app: taj-user-home
+    spec:
+      containers:
+      - name: taj-user-home
+        image: vishalkurane/taj-user-home:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        envFrom:
+          - configMapRef:
+              name: taj-configmap
+
+---
+# Service - Home Authentication
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: taj-user-home-service
+  namespace: taj-user-app
+spec:
+  selector:
+    app: taj-user-home
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+# Deploynent - Menu Authentication
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taj-user-menu
+  namespace: taj-user-app
+  labels:
+    app: taj-user-menu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taj-user-menu
+  template:
+    metadata:
+      labels:
+        app: taj-user-menu
+    spec:
+      containers:
+      - name: taj-user-menu
+        image: vishalkurane/taj-user-menu:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        envFrom:
+          - configMapRef:
+              name: taj-configmap
+
+---
+# Service - Menu Authentication
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: taj-user-menu-service
+  namespace: taj-user-app
+spec:
+  selector:
+    app: taj-user-menu
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+# Deploynent - Reservation Authentication
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taj-user-reservation
+  namespace: taj-user-app
+  labels:
+    app: taj-user-reservation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taj-user-reservation
+  template:
+    metadata:
+      labels:
+        app: taj-user-reservation
+    spec:
+      containers:
+      - name: taj-user-reservation
+        image: vishalkurane/taj-user-reservation:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        envFrom:
+          - configMapRef:
+              name: taj-configmap
+
+---
+# Service - Reservation Authentication
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: taj-user-reservation-service
+  namespace: taj-user-app
+spec:
+  selector:
+    app: taj-user-reservation
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

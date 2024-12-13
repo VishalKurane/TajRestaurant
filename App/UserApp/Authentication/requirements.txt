@@ -1,0 +1,6 @@
+flask
+pyjwt
+requests
+flask_jwt_extended
+pytz
+gunicorn

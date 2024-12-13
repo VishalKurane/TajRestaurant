@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: taj-configmap
+  namespace: taj-admin-app
+data:
+
+  JWT_SECRET_KEY: vishalarunkurane
+  AZ_FUNCTION_VALIDATE_TOKEN: https://fa-usermgmt-apis-01.azurewebsites.net/api/ValidateToken?code=Kvr-arDx9GvFn7X0QSwjlT26Ughotfaf1HCjC3LP6nDvAzFuFWVVIQ%3D%3D
+
+# ============================ USER SERVICE ============================
+
+  # Auth Service
+  AZ_FUNCTION_USER_LOGIN: https://fa-usermgmt-apis-01.azurewebsites.net/api/UserLogin?code=Kvr-arDx9GvFn7X0QSwjlT26Ughotfaf1HCjC3LP6nDvAzFuFWVVIQ%3D%3D
+  AZ_FUNCTION_ADD_USER: https://fa-usermgmt-apis-01.azurewebsites.net/api/AddUser?code=9NJA4sCzVuVLcQ8cALOyLG1TNzWfCPd35XGVBAsZQdfdAzFuh1C1bQ%3D%3D
+
+  # Menu Service
+  AZ_FUNCTION_GET_MENU: https://fa-usermgmt-apis-01.azurewebsites.net/api/GetMenu?code=Kvr-arDx9GvFn7X0QSwjlT26Ughotfaf1HCjC3LP6nDvAzFuFWVVIQ%3D%3D
+
+  # Reservation Service
+  SERVICE_BUS_CONNECTION_STRING: Endpoint=sb://sb-tajrestaurant.servicebus.windows.net/;SharedAccessKeyName=SendBooking;SharedAccessKey=rO+agZke6YnGWKV/CsXH13B8t9XGqTsya+ASbDk0UCA=
+  QUEUE_NAME: reservationoftables
+
+# ============================ ADMIN SERVICE ============================
+
+  # Auth Service
+  AZ_FUNCTION_ADMIN_LOGIN: https://fa-usermgmt-apis-01.azurewebsites.net/api/AdmLogin?code=Kvr-arDx9GvFn7X0QSwjlT26Ughotfaf1HCjC3LP6nDvAzFuFWVVIQ%3D%3D
+
+  # Home Service
+  AZ_FUNCTION_REMOVE_USER: https://fa-usermgmt-apis-01.azurewebsites.net/api/DeleteUser?code=0XS_FR4-oiNloJrI_BW9evbmEdPLo5h53flTFJHTQbssAzFumHql2w%3D%3D
+  
+  # Menu Service
+  AZ_FUNCTION_ADD_MENU: https://fa-usermgmt-apis-01.azurewebsites.net/api/AddMenu?code=Kvr-arDx9GvFn7X0QSwjlT26Ughotfaf1HCjC3LP6nDvAzFuFWVVIQ%3D%3D
+  AZ_FUNCTION_REMOVE_MENU: https://fa-usermgmt-apis-01.azurewebsites.net/api/DeleteMenu?code=Kvr-arDx9GvFn7X0QSwjlT26Ughotfaf1HCjC3LP6nDvAzFuFWVVIQ%3D%3D
+
+  # Reservation Service
+  AZ_FUNCTION_GET_BOOKING: https://fa-usermgmt-apis-01.azurewebsites.net/api/GetBooking?code=Kvr-arDx9GvFn7X0QSwjlT26Ughotfaf1HCjC3LP6nDvAzFuFWVVIQ%3D%3D
+  AZ_FUNCTION_DELETE_RESERVATION: https://fa-usermgmt-apis-01.azurewebsites.net/api/deletereservation/{reservation_id}?code=Kvr-arDx9GvFn7X0QSwjlT26Ughotfaf1HCjC3LP6nDvAzFuFWVVIQ%3D%3D

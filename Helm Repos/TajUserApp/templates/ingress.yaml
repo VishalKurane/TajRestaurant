@@ -1,0 +1,47 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: taj-user-ingress
+  namespace: taj-user-app
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx-user
+  rules:
+  - http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: taj-user-home-service
+              port:
+                number: 80
+        - path: /auth/login
+          pathType: Exact
+          backend:
+            service:
+              name: taj-user-auth-service
+              port:
+                number: 80
+        - path: /auth/create-account
+          pathType: Exact
+          backend:
+            service:
+              name: taj-user-create-account-service
+              port:
+                number: 80
+        - path: /menu
+          pathType: Exact
+          backend:
+            service:
+              name: taj-user-menu-service
+              port:
+                number: 80
+        - path: /reservation
+          pathType: Exact
+          backend:
+            service:
+              name: taj-user-reservation-service
+              port:
+                number: 80

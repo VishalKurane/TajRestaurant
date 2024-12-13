@@ -1,0 +1,185 @@
+# Create Namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: taj-admin-app
+
+---
+# Deploynent - Admin Authentication
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taj-admin-auth
+  namespace: taj-admin-app
+  labels:
+    app: taj-admin-auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taj-admin-auth
+  template:
+    metadata:
+      labels:
+        app: taj-admin-auth
+    spec:
+      containers:
+      - name: taj-admin-auth
+        image: vishalkurane/taj-admin-auth:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        envFrom:
+          - configMapRef:
+              name: taj-configmap
+
+---
+# Service - Admin Authentication
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: taj-admin-auth-service
+  namespace: taj-admin-app
+spec:
+  selector:
+    app: taj-admin-auth
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+# Deploynent - Admin - Home
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taj-admin-home
+  namespace: taj-admin-app
+  labels:
+    app: taj-admin-home
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taj-admin-home
+  template:
+    metadata:
+      labels:
+        app: taj-admin-home
+    spec:
+      containers:
+      - name: taj-admin-home
+        image: vishalkurane/taj-admin-home:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        envFrom:
+          - configMapRef:
+              name: taj-configmap
+
+---
+# Service - Admin - Home
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: taj-admin-home-service
+  namespace: taj-admin-app
+spec:
+  selector:
+    app: taj-admin-home
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+# Deploynent - Admin - Menu
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taj-admin-menu
+  namespace: taj-admin-app
+  labels:
+    app: taj-admin-menu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taj-admin-menu
+  template:
+    metadata:
+      labels:
+        app: taj-admin-menu
+    spec:
+      containers:
+      - name: taj-admin-menu
+        image: vishalkurane/taj-admin-menu:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        envFrom:
+          - configMapRef:
+              name: taj-configmap
+
+---
+# Service - Admin - Menu
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: taj-admin-menu-service
+  namespace: taj-admin-app
+spec:
+  selector:
+    app: taj-admin-menu
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+# Deploynent - Admin - Reservation
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taj-admin-reservation
+  namespace: taj-admin-app
+  labels:
+    app: taj-admin-reservation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: taj-admin-reservation
+  template:
+    metadata:
+      labels:
+        app: taj-admin-reservation
+    spec:
+      containers:
+      - name: taj-admin-reservation
+        image: vishalkurane/taj-admin-reservation:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        envFrom:
+          - configMapRef:
+              name: taj-configmap
+
+---
+# Service - Admin - Reservation
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: taj-admin-reservation-service
+  namespace: taj-admin-app
+spec:
+  selector:
+    app: taj-admin-reservation
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
