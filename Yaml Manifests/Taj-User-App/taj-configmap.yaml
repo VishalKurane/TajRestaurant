@@ -18,7 +18,7 @@ data:
   AZ_FUNCTION_GET_MENU: https://fa-usermgmt-apis-01.azurewebsites.net/api/GetMenu?code=Kvr-arDx9GvFn7X0QSwjlT26Ughotfaf1HCjC3LP6nDvAzFuFWVVIQ%3D%3D
 
   # Reservation Service
-  SERVICE_BUS_CONNECTION_STRING: Endpoint=sb://sb-tajrestaurant.servicebus.windows.net/;SharedAccessKeyName=SendBooking;SharedAccessKey=rO+agZke6YnGWKV/CsXH13B8t9XGqTsya+ASbDk0UCA=
+  SERVICE_BUS_CONNECTION_STRING: abc
   QUEUE_NAME: reservationoftables
 
 # ============================ ADMIN SERVICE ============================
