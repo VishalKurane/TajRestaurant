@@ -21,10 +21,10 @@ The application architecture integrates modern cloud technologies and microservi
 - **Logging**: Implemented with EFK Satck (Elasticsearch, Fluentbit and Kibana)
 
 ### Taj-Restaurant-Detail-Services
-![Taj-Restaurant-Detail-Services](images/Taj-Restaurant-Detail-Services.png)
+![Taj-Restaurant-Detail-Services](Images/Taj-Restaurant-Detail-Services.png)
 
 ### Taj-Restaurant-Application-Architecture
-![Taj-Restaurant-Application-Architecture](images/Taj-Restaurant-Application-Architecture.png)
+![Taj-Restaurant-Application-Architecture](Images/Taj-Restaurant-Application-Architecture.png)
 
 
 
@@ -165,7 +165,7 @@ Instrumentation key for integrating with Azure Application Insights, enabling pe
 **Note:** Post deployment configure the generated function URLs to respective environment variables in ConfigMap.
 
 ### Taj-Restaurant-Backend-APIs-Deployment
-![Taj-Restaurant-Backend-APIs-Deployment](images/Taj-Restaurant-Backend-APIs-Deployment.png)
+![Taj-Restaurant-Backend-APIs-Deployment](Images/Taj-Restaurant-Backend-APIs-Deployment.png)
 
 
 ---
@@ -234,7 +234,7 @@ Instrumentation key for integrating with Azure Application Insights, enabling pe
 
 - To deploy the Promethus, Grafana and Alert Manager using Helm Chart through Azure DevOps Release Pipeline, clone the Helm Repo (/Helm Repos/Monitoring) to Azure DevOps Repo. This contains the template to deploy the **Ingress** and **Nginx Ingress Controller** to access the `Promethus` OR `Grafana` OR `Alert Manager` using Publc IP.
 
-![Helm-Repo-Release-Pipeline](images/ADO/Helm-Repo-Release-Pipeline.png)
+![Helm-Repo-Release-Pipeline](Images/ADO/Helm-Repo-Release-Pipeline.png)
 
 - Create a Release Pipeline with 'Stage' `Monitoring - Promethus and Grafana` containing below tasks:
   - Task 1: Install Helm
@@ -298,7 +298,7 @@ Instrumentation key for integrating with Azure Application Insights, enabling pe
 ---
 
 <!-- ### Taj-Restaurant-Kubernetes-Deployment -->
-![Taj-Restaurant-Kubernetes-Deployment](images/Taj-Restaurant-Kubernetes-Deployment.png)
+![Taj-Restaurant-Kubernetes-Deployment](Images/Taj-Restaurant-Kubernetes-Deployment.png)
 
 
 ---
