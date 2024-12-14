@@ -45,10 +45,10 @@ The APIs folder contains the source code for backend APIs, developed for an Azur
 ### Admin App APIs
 
 - **AdmLogin** : This API validates the Username & Password and if the creds are valid generate and return a JWT token for authentication of Admin.
-- **GetUser** : This API query the 'UserTable' and fetch the available Menus.
-- **GetAdmin** : This API query the 'AdminTable' and fetch the available Menus.
+- **GetUser** : This API query the 'UserTable' and fetch the available Users.
+- **GetAdmin** : This API query the 'AdminTable' and fetch the available Admins. (Not Configured)
 - **GetMenu** : This API query the 'MenuTable' and fetch the available Menus.
-- **GetBooking** : This API query th'e ReservationTable' and fetch the available Reservation Details.
+- **GetBooking** : This API query the 'ReservationTable' and fetch the available Reservation Details.
 - **AddAdmin** : To add and register a new Admin. (Not Configured)
 - **AddMenu** : To add new Menu
 - **DeleteUser** : To delete the existing User
