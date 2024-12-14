@@ -180,6 +180,13 @@ Instrumentation key for integrating with Azure Application Insights, enabling pe
   kubectl create ns logging
   ```
 
+- Add the Elastic Helm repository:
+
+  ```bash
+  helm repo add elastic https://helm.elastic.co
+  helm repo update
+  ```
+
 - Install **Elastic Search** using Helm:
 
   ```bash
