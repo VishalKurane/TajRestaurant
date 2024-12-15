@@ -379,8 +379,8 @@ Instrumentation key for integrating with Azure Application Insights, enabling pe
 
 ## 👉 Notes:
 
-- ### Update the API endpoints, Connection String and JWT Secret in `taj-configmap.yaml` of 'Taj-Admin-App' and 'Taj-User-App'.
+- #### Update the API endpoints, Connection String and JWT Secret in `taj-configmap.yaml` of 'Taj-Admin-App' and 'Taj-User-App'.
 
-- ### The value of `JWT_SECRET_KEY` variables should be same in backend API and in ConfigMaps.
+- #### The value of `JWT_SECRET_KEY` variables should be same in backend API and in ConfigMaps.
 
 ---
