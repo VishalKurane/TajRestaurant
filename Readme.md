@@ -302,9 +302,8 @@ Instrumentation key for integrating with Azure Application Insights, enabling pe
   kubectl get ingress -n taj-admin-app
   ```
 
----
 
-<!-- ### Taj-Restaurant-Kubernetes-Deployment -->
+### Taj-Restaurant-Kubernetes-Deployment
 ![Taj-Restaurant-Kubernetes-Deployment](Images/Taj-Restaurant-Kubernetes-Deployment.png)
 
 
