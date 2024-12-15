@@ -127,7 +127,7 @@ The **Helm Repo** folder contains Helm charts used for deploying various compone
 
 ### Contents:
 1. **Monitoring**:
-   - Helm chart used to deploy **Ingress** and **Ingress Controller** to access the `Promethus` OR `Grafana` OR `Alert Manager`.
+   - Helm chart used to deploy **Ingress** and **Ingress Controller** to access the `Prometheus` OR `Grafana` OR `Alert Manager`.
    - This chart needs to be deployed after deploying Monitoring Stack (Prometheus, Grafana and Alert.Manager)
 
 2. **TajAdminApp**:
@@ -310,7 +310,7 @@ Instrumentation key for integrating with Azure Application Insights, enabling pe
 
 ---
 
-## Basic PromQL Queries
+## #️⃣ Basic PromQL Queries
 
 -  ### CPU Percentage:
     ```bash
@@ -374,5 +374,13 @@ Instrumentation key for integrating with Azure Application Insights, enabling pe
     sum(rate(container_network_transmit_bytes_total{namespace="logging"}[5m])) by (pod)
     sum(rate(container_network_transmit_bytes_total{namespace="monitoring"}[5m])) by (pod)
     ```
+
+---
+
+## 👉 Notes:
+
+- ### Update the API endpoints, Connection String and JWT Secret in `taj-configmap.yaml` of 'Taj-Admin-App' and 'Taj-User-App'.
+
+- ### The value of `JWT_SECRET_KEY` variables should be same in backend API and in ConfigMaps.
 
 ---
